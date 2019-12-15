@@ -24,7 +24,7 @@ let HitBtcApiNodeSdk = (() => {
     };
 
     let updateRequestOptions = (path, options) => {
-        let request_options = default_request_options;
+        let request_options = JSON.parse(JSON.stringify(default_request_options));
         request_options.uri = conf.rest_base_url + path;
         if (options) {
             Object.keys(options).forEach(key => {
